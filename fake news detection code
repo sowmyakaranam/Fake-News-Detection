@@ -9,3 +9,18 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
 plt.style.use('ggplot')
+sns.color_palette("tab10")
+sns.set(context='notebook', style='darkgrid', font='sans-serif', font_scale=1, rc=None)
+matplotlib.rcParams['figure.figsize'] =[20,8]
+matplotlib.rcParams.update({'font.size': 15})
+matplotlib.rcParams['font.family'] = 'sans-serif'
+df=pd.read_csv('news.csv')
+print(df.shape)
+df.head()
+labels=df.label
+labels.head()
+target=df.label.value_counts()
+target
+#plotting in a graph
+sns.countplot(df.label)
+plt.title('the number of news fake/real');
